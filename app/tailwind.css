@@ -2,11 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  box-sizing: border-box;
+}
+
 html,
 body {
-  @apply bg-white dark:bg-gray-950;
+  margin: 0;
 
-  @media (prefers-color-scheme: dark) {
-    color-scheme: dark;
+  /* @apply bg-white dark:bg-gray-950; */
+
+  @media (prefers-color-scheme: white) {
+    color-scheme: white;
   }
+}
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+
 }
