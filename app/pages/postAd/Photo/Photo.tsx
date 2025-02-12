@@ -22,7 +22,7 @@ const Photo: FC<PhotoProps> = ({ error, photos, handlePhotoUpload, removePhoto }
             </button>
           </div>
         ))}
-        <label htmlFor="photo-upload" className="w-[120px] h-[90px] flex items-center justify-center rounded-lg bg-slate-100 cursor-pointer">
+        <label style={{ outline: error ? "2px solid red" : "" }} htmlFor="photo-upload" className="w-[120px] h-[90px] flex items-center justify-center rounded-lg bg-slate-100 cursor-pointer">
           <img src="/camera.svg" alt="camera" />
         </label>
       </div>

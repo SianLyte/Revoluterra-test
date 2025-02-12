@@ -1,7 +1,6 @@
 import { Form, useActionData, useSubmit } from "@remix-run/react";
 import { Button, ButtonTheme } from "~/components/Button";
 import { FormSchemaErrors } from "./AdFormSchema";
-import Parameters from "../Parameters/Parameters";
 import { usePhoto } from "../Photo/lib/usePhoto";
 import SelectCity from "../SelectCity/SelectCity";
 import Contacts from "../Contacts/Contacts";
@@ -9,6 +8,9 @@ import Description from "../Details/Description";
 import Price from "../Details/Price";
 import Photo from "../Photo/Photo";
 import Video from "../Details/Details";
+import Title from "../Parameters/Title";
+import Condition from "../Parameters/Condition";
+import AdType from "../Parameters/AdType";
 
 export type ActionData = {
   success: boolean,
@@ -30,7 +32,11 @@ const AdForm = () => {
 
   return (
     <Form className="bg-white p-8 mx-4 max-md:p-6 lg:pb-16 md:p-10 rounded-lg" method="post" onSubmit={onSubmit}>
-      <Parameters errors={actionData?.errors} />
+      <h2 className="text-2xl max-sm:text-lg font-semibold mb-6">Параметры</h2>
+      <Title error={actionData?.errors?.title} />
+      <Condition />
+      <AdType error={actionData?.errors?.type} />
+
       <h2 className="text-2xl max-sm:text-lg font-semibold mb-6">Подробности</h2>
       <Description error={actionData?.errors?.description} />
       <Price error={actionData?.errors?.price} />

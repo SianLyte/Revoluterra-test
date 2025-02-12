@@ -24,7 +24,7 @@ export const Input: FC<InputProps> = (props) => {
       type='text'
       name={name}
       placeholder={placeholder}
-      className={classNames(`py-5 px-4 h-14 rounded-lg bg-slate-100 w-full text-sm`, {},
+      className={classNames(`outline-black py-5 px-4 h-14 rounded-lg bg-slate-100 w-full text-sm`, {},
         [className!])
       }
       {...otherProps}

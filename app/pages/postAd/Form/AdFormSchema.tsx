@@ -23,6 +23,6 @@ export const adFormSchema = zfd.formData({
   price: z.string().regex(/^\d+$/, "Цена должна содержать только цифры"),
   photos: zfd.repeatable(z.array(z.instanceof(File)).min(1, "Добавьте хотя бы одно фото").max(10, "Максимум 10 фото")),
   video: z.string().url("Введите корректную ссылку на видео").regex(/\./, "В ссылке должна быть точка"),
-  location: z.enum(["moscow", "saint-petersburg", "ekaterinburg", "kazan", "krasnodar"], { message: "Выберите город из списка" }),
+  location: z.enum(["Москва", "Санкт-Петербург", "Екатеринбург", "Казань", "Краснодар"], { message: "Выберите город из списка" }),
   phone: z.string().regex(/^\d+$/, "Телефон должен содержать только цифры"),
 });

@@ -36,6 +36,7 @@ const SelectCity: FC<SelectCityProps> = ({ error }) => {
         {isMobile ?
           <>
             <Input
+              style={{ outline: error ? "2px solid red" : "" }}
               type="text"
               name="location"
               value={searchTerm}
@@ -65,14 +66,16 @@ const SelectCity: FC<SelectCityProps> = ({ error }) => {
           <div className="sm:grid sm:gap-4 sm:grid-cols-[212px_1fr] sm:grid-rows-[48px_auto] mb-6">
             <h3 className="text-sm flex items-center mb-4">Город</h3>
             <div>
-              <select name="location" value={location} onChange={(e) => setLocation(e.target.value)}
+              <select
+                style={{ outline: error ? "2px solid red" : "" }}
+                name="location" value={location} onChange={(e) => setLocation(e.target.value)}
                 className="text-grey w-full rounded-lg bg-slate-100 py-[18px] px-4 h-14 text-sm lg:w-[480px] mb-4 max-sm:mb-2 appearance-none bg-[url('/caret-down.svg')] bg-no-repeat bg-[right_20px_center]">
                 <option value="" disabled>Выберите город</option>
-                <option value="moscow">Москва</option>
-                <option value="saint-petersburg">Санкт-Петербург</option>
-                <option value="ekaterinburg">Екатеринбург</option>
-                <option value="kazan">Казань</option>
-                <option value="krasnodar">Краснодар</option>
+                <option value="Москва">Москва</option>
+                <option value="Санкт-Петербург">Санкт-Петербург</option>
+                <option value="Екатеринбург">Екатеринбург</option>
+                <option value="Казань">Казань</option>
+                <option value="Краснодар">Краснодар</option>
               </select>
               {error ? <p className="text-[13px] text-red-500  sm:col-start-2">{error._errors[0]}</p> : null}
             </div>
